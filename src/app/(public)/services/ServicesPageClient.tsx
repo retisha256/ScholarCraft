@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { EASE } from '@/lib/motion'
 import {
   Search, BookOpen, PenTool, Library, FileText,
   CheckCircle, AlignLeft, BarChart2, Monitor, ArrowRight,
@@ -18,24 +19,24 @@ export default function ServicesPageClient() {
   return (
     <>
       {/* Page hero */}
-      <section className="pt-32 pb-20 bg-[#0F172A] relative overflow-hidden">
+      <section className="pt-32 pb-20 bg-[#FDFBF7] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#2563EB]/8 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#E07A5F]/10 rounded-full blur-3xl" />
         </div>
         <div className="container-xl relative z-10 text-center">
-          <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="label-pill mb-5 inline-flex">
+          <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="label-pill mb-5 inline-flex bg-[#F8F6F2] text-[#2D3748] border-[#E8E5DF]">
             Our Services
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-            className="font-[family-name:var(--font-poppins)] font-bold text-[#F8FAFC] text-[42px] lg:text-[60px] leading-tight tracking-tight mb-5"
+            className="font-[family-name:var(--font-poppins)] font-bold text-[#002147] text-[42px] lg:text-[60px] leading-tight tracking-tight mb-5"
           >
             Expert Support for Every{' '}
-            <span className="text-gradient">Academic Need</span>
+            <span className="text-[#E07A5F]">Academic Need</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}
-            className="text-[#CBD5E1] text-lg max-w-xl mx-auto"
+            className="text-[#4A5568] text-lg max-w-xl mx-auto"
           >
             Nine specialised services covering every stage of your academic journey, at every level of study.
           </motion.p>
@@ -43,7 +44,7 @@ export default function ServicesPageClient() {
       </section>
 
       {/* Services — alternating rows */}
-      <section className="section-py bg-[#0F172A]">
+      <section className="section-py bg-[#FDFBF7]">
         <div className="container-xl">
           <div className="flex flex-col gap-24">
             {SERVICES.map((service, idx) => {
@@ -56,7 +57,7 @@ export default function ServicesPageClient() {
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-80px' }}
-                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.7, ease: EASE }}
                   className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
                 >
                   {/* Text */}
@@ -101,14 +102,14 @@ export default function ServicesPageClient() {
                   {/* Visual */}
                   <div className={!isEven ? 'lg:order-1' : ''}>
                     <div className="relative">
-                      <div className="absolute inset-0 rounded-3xl bg-[#2563EB]/8 blur-2xl scale-90" aria-hidden="true" />
-                      <div className="relative glass rounded-3xl p-10 flex flex-col items-center justify-center min-h-[300px] gap-5 hover:border-[#2563EB]/25 transition-colors duration-500">
-                        <div className="w-20 h-20 rounded-3xl bg-[#2563EB]/15 border border-[#2563EB]/25 flex items-center justify-center">
+                      <div className="absolute inset-0 rounded-3xl bg-[#E07A5F]/10 blur-2xl scale-90" aria-hidden="true" />
+                      <div className="relative rounded-3xl border border-[#E8E5DF] bg-white p-10 flex flex-col items-center justify-center min-h-[300px] gap-5 shadow-sm hover:shadow-md transition-all duration-500">
+                        <div className="w-20 h-20 rounded-3xl bg-[#F8F6F2] border border-[#E8E5DF] flex items-center justify-center">
                           {Icon && <Icon className="w-10 h-10 text-[#2563EB]" aria-hidden="true" />}
                         </div>
                         <div className="text-center">
-                          <p className="font-[family-name:var(--font-poppins)] font-semibold text-[#F8FAFC] text-xl mb-2">{service.title}</p>
-                          <p className="text-[#CBD5E1] text-sm">Confidential · Expert · On-Time</p>
+                          <p className="font-[family-name:var(--font-poppins)] font-semibold text-[#002147] text-xl mb-2">{service.title}</p>
+                          <p className="text-[#4A5568] text-sm">Confidential · Expert · On-Time</p>
                         </div>
                       </div>
                     </div>
@@ -121,19 +122,19 @@ export default function ServicesPageClient() {
       </section>
 
       {/* CTA band */}
-      <section className="py-20 bg-[#0A1020]">
+      <section className="py-20 bg-[#F8F6F2]">
         <div className="container-xl text-center">
-          <h2 className="font-[family-name:var(--font-poppins)] font-bold text-[#F8FAFC] text-[36px] mb-4">
+          <h2 className="font-[family-name:var(--font-poppins)] font-bold text-[#002147] text-[36px] mb-4">
             Ready to Get Started?
           </h2>
-          <p className="text-[#CBD5E1] text-base mb-8 max-w-md mx-auto">
+          <p className="text-[#4A5568] text-base mb-8 max-w-md mx-auto">
             Submit your request today and receive a personalised quote within 2 hours.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/request" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold shadow-[0_0_24px_rgba(37,99,235,0.4)] transition-all">
+            <Link href="/request" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold shadow-sm hover:shadow-md transition-all">
               Request a Quote
             </Link>
-            <Link href="/contact" className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl border border-white/[0.12] text-[#CBD5E1] hover:text-[#F8FAFC] hover:border-white/20 font-semibold transition-all">
+            <Link href="/contact" className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl border border-[#E8E5DF] text-[#002147] hover:bg-white hover:border-[#D8D3CB] font-semibold transition-all">
               Contact Us
             </Link>
           </div>

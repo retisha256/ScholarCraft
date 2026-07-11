@@ -1,23 +1,16 @@
 @import "tailwindcss";
+@import "../styles/design-tokens.css";
+@import "../styles/system.css";
 
-/* ─── Custom theme tokens ─────────────────────────────── */
-@theme {
-  --font-poppins: 'Poppins', sans-serif;
-  --font-inter:   'Inter', sans-serif;
-
-  --color-brand:      #2563EB;
-  --color-brand-dark: #1D4ED8;
-  --color-dark:       #0F172A;
-  --color-card:       #1E293B;
-  --color-light:      #F8FAFC;
-  --color-accent:     #F59E0B;
-  --color-success:    #22C55E;
-  --color-muted:      #CBD5E1;
-  --color-border:     rgba(255,255,255,0.08);
+:root {
+  color-scheme: light;
 }
 
-/* ─── Reset ───────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
@@ -25,138 +18,9 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background: #0F172A;
-  color: #F8FAFC;
-  line-height: 1.8;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-
-/* ─── Selection ───────────────────────────────────────── */
-::selection { background: #2563EB; color: #fff; }
-
-/* ─── Scrollbar ───────────────────────────────────────── */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #0F172A; }
-::-webkit-scrollbar-thumb { background: #2563EB; border-radius: 99px; }
-
-/* ─── Focus ───────────────────────────────────────────── */
-:focus-visible {
-  outline: 2px solid #2563EB;
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-/* ─── Utility classes ─────────────────────────────────── */
-.container-xl {
-  width: 100%;
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: 24px;
-}
-
-@media (min-width: 768px)  { .container-xl { padding-inline: 40px; } }
-@media (min-width: 1280px) { .container-xl { padding-inline: 48px; } }
-
-.section-py {
-  padding-top: 96px;
-  padding-bottom: 96px;
-}
-@media (min-width: 1024px) {
-  .section-py {
-    padding-top: 120px;
-    padding-bottom: 120px;
-  }
-}
-
-/* Gradient text */
-.text-gradient {
-  background: linear-gradient(135deg, #60A5FA 0%, #2563EB 50%, #F59E0B 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.text-gradient-blue {
-  background: linear-gradient(135deg, #93C5FD 0%, #2563EB 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Glass card */
-.glass {
-  background: rgba(30, 41, 59, 0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-/* Glow effects */
-.glow-blue {
-  box-shadow: 0 0 40px rgba(37,99,235,0.25);
-}
-.glow-accent {
-  box-shadow: 0 0 40px rgba(245,158,11,0.25);
-}
-
-/* Noise texture overlay */
-.noise::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  opacity: 0.04;
-  pointer-events: none;
-  border-radius: inherit;
-}
-
-/* Animated gradient border */
-@keyframes borderSpin {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.gradient-border {
-  position: relative;
-}
-.gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: linear-gradient(135deg, #2563EB, #F59E0B, #2563EB);
-  background-size: 200% 200%;
-  animation: borderSpin 4s ease infinite;
-  z-index: -1;
-}
-
-/* Section label pill */
-.label-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  border-radius: 99px;
-  border: 1px solid rgba(37,99,235,0.4);
-  background: rgba(37,99,235,0.12);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #93C5FD;
-}
-
-/* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;

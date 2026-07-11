@@ -7,7 +7,7 @@ import AboutPageClient from './AboutPageClient'
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn about AcademicPro – our mission, our expert team, and our commitment to supporting student success worldwide.',
+    'Learn about ScholarCraft – our mission, our expert team, and our commitment to supporting student success worldwide.',
 }
 
 export default function AboutPage() {

@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-2xl font-bold font-poppins text-slate-900 dark:text-white mb-3">1. Introduction</h2>
             <p className="leading-relaxed">
-              AcademicPro (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services. By using our services, you agree to this policy.
+              ScholarCraft (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services. By using our services, you agree to this policy.
             </p>
           </section>
 
@@ -90,8 +90,8 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-2xl font-bold font-poppins text-slate-900 dark:text-white mb-3">8. Contact Us</h2>
             <p className="leading-relaxed">
               If you have any questions about this Privacy Policy or our data practices, please contact us at:{' '}
-              <a href="mailto:privacy@academicpro.com" className="text-blue-600 hover:underline">
-                privacy@academicpro.com
+              <a href="mailto:privacy@scholarcraft.com" className="text-blue-600 hover:underline">
+                privacy@scholarcraft.com
               </a>
             </p>
           </section>

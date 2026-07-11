@@ -9,9 +9,9 @@ import FAQSection from '@/components/sections/FAQSection'
 import ContactSection from '@/components/sections/ContactSection'
 
 export const metadata: Metadata = {
-  title: 'AcademicPro — Expert Academic Support Services',
+  title: 'ScholarCraft — Expert Academic Support Services',
   description:
-    'Professional academic support including dissertation guidance, essay assistance, statistical analysis, and more. Trusted by 10,000+ students worldwide.',
+    'Professional academic support including dissertation guidance, essay assistance, statistical analysis, and more. Trusted by students across the globe.',
 }
 
 export default function HomePage() {

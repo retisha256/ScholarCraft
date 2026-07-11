@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
-  description: 'Read our terms of service for using AcademicPro academic support services.',
+  description: 'Read our terms of service for using ScholarCraft academic support services.',
 }
 
 export default function TermsOfServicePage() {
@@ -18,14 +18,14 @@ export default function TermsOfServicePage() {
           <section>
             <h2 className="text-2xl font-bold font-poppins text-slate-900 dark:text-white mb-3">1. Acceptance of Terms</h2>
             <p className="leading-relaxed">
-              By accessing or using AcademicPro&apos;s website and services, you agree to be bound by these Terms of Service. If you do not agree to all of these terms, please do not use our services.
+              By accessing or using ScholarCraft&apos;s website and services, you agree to be bound by these Terms of Service. If you do not agree to all of these terms, please do not use our services.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold font-poppins text-slate-900 dark:text-white mb-3">2. Description of Services</h2>
             <p className="leading-relaxed">
-              AcademicPro provides academic support services including research guidance, dissertation support, essay assistance, editing, statistical analysis, and related academic consulting. Our services are intended to support your learning and academic development, not to replace original work where academic integrity policies apply.
+              ScholarCraft provides academic support services including research guidance, dissertation support, essay assistance, editing, statistical analysis, and related academic consulting. Our services are intended to support your learning and academic development, not to replace original work where academic integrity policies apply.
             </p>
           </section>
 
@@ -63,21 +63,21 @@ export default function TermsOfServicePage() {
           <section>
             <h2 className="text-2xl font-bold font-poppins text-slate-900 dark:text-white mb-3">6. Confidentiality</h2>
             <p className="leading-relaxed">
-              Both parties agree to maintain strict confidentiality about the nature of our working relationship and the content of any projects. AcademicPro will not share client information or project details with any third parties without explicit consent.
+              Both parties agree to maintain strict confidentiality about the nature of our working relationship and the content of any projects. ScholarCraft will not share client information or project details with any third parties without explicit consent.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold font-poppins text-slate-900 dark:text-white mb-3">7. Intellectual Property</h2>
             <p className="leading-relaxed">
-              Upon full payment, clients receive full ownership of the delivered work product. AcademicPro retains the right to use anonymized, non-identifying elements for training and service improvement purposes.
+              Upon full payment, clients receive full ownership of the delivered work product. ScholarCraft retains the right to use anonymized, non-identifying elements for training and service improvement purposes.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold font-poppins text-slate-900 dark:text-white mb-3">8. Limitation of Liability</h2>
             <p className="leading-relaxed">
-              AcademicPro&apos;s liability is limited to the amount paid for the specific service in question. We are not liable for any indirect, incidental, or consequential damages arising from the use of our services. We make no guarantees about specific academic outcomes, grades, or results.
+              ScholarCraft&apos;s liability is limited to the amount paid for the specific service in question. We are not liable for any indirect, incidental, or consequential damages arising from the use of our services. We make no guarantees about specific academic outcomes, grades, or results.
             </p>
           </section>
 
@@ -85,8 +85,8 @@ export default function TermsOfServicePage() {
             <h2 className="text-2xl font-bold font-poppins text-slate-900 dark:text-white mb-3">9. Contact</h2>
             <p className="leading-relaxed">
               For questions about these Terms, contact us at{' '}
-              <a href="mailto:legal@academicpro.com" className="text-blue-600 hover:underline">
-                legal@academicpro.com
+              <a href="mailto:legal@scholarcraft.com" className="text-blue-600 hover:underline">
+                legal@scholarcraft.com
               </a>
             </p>
           </section>

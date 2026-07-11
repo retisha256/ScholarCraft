@@ -34,7 +34,7 @@ export default function AdminSidebar() {
           <GraduationCap className="w-5 h-5 text-white" aria-hidden="true" />
         </div>
         <div>
-          <p className="font-bold text-sm font-poppins">AcademicPro</p>
+          <p className="font-bold text-sm font-poppins">ScholarCraft</p>
           <p className="text-xs text-slate-400">Admin Panel</p>
         </div>
       </div>

@@ -14,7 +14,7 @@ export default function AdminSettingsPage() {
               <p>NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key</p>
               <p>SUPABASE_SERVICE_ROLE_KEY=your_key</p>
               <p>ADMIN_EMAIL=admin@yourdomain.com</p>
-              <p>NEXT_PUBLIC_WHATSAPP_NUMBER=+1234567890</p>
+              <p>NEXT_PUBLIC_WHATSAPP_NUMBER=+256 764 929546</p>
               <p>NEXT_PUBLIC_SITE_URL=https://yourdomain.com</p>
             </div>
           </div>

@@ -54,7 +54,7 @@ export default function AdminLoginClient() {
             <GraduationCap className="w-9 h-9 text-white" aria-hidden="true" />
           </div>
           <h1 className="text-2xl font-bold font-poppins text-white">Admin Dashboard</h1>
-          <p className="text-blue-300 text-sm mt-1">AcademicPro Management Portal</p>
+          <p className="text-blue-300 text-sm mt-1">ScholarCraft Management Portal</p>
         </div>
 
         {/* Form */}

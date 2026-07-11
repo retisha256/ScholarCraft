@@ -11,20 +11,13 @@ export default function CookieConsent() {
   useEffect(() => {
     const consent = localStorage.getItem('cookie-consent')
     if (!consent) {
-      const timer = setTimeout(() => setShow(true), 1500)
-      return () => clearTimeout(timer)
+      const t = setTimeout(() => setShow(true), 1800)
+      return () => clearTimeout(t)
     }
   }, [])
 
-  const handleAccept = () => {
-    localStorage.setItem('cookie-consent', 'accepted')
-    setShow(false)
-  }
-
-  const handleDecline = () => {
-    localStorage.setItem('cookie-consent', 'declined')
-    setShow(false)
-  }
+  const accept  = () => { localStorage.setItem('cookie-consent', 'accepted');  setShow(false) }
+  const decline = () => { localStorage.setItem('cookie-consent', 'declined');  setShow(false) }
 
   return (
     <AnimatePresence>
@@ -39,43 +32,37 @@ export default function CookieConsent() {
           aria-label="Cookie consent"
           aria-live="polite"
         >
-          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 p-6">
+          <div className="bg-white rounded-2xl shadow-[0_8px_40px_rgba(0,33,71,0.14)] border border-[#E2D9CC] p-6">
             <button
-              onClick={handleDecline}
-              className="absolute top-4 right-4 p-1 text-slate-400 hover:text-slate-600 transition-colors rounded"
+              onClick={decline}
+              className="absolute top-4 right-4 p-1.5 text-[#9CA3AF] hover:text-[#002147] hover:bg-[#F5F1EB] rounded-lg transition-colors"
               aria-label="Close cookie notice"
             >
               <X className="w-4 h-4" aria-hidden="true" />
             </button>
 
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Cookie className="w-5 h-5 text-amber-500" aria-hidden="true" />
+              <div className="w-10 h-10 bg-[#D4AF37]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Cookie className="w-5 h-5 text-[#D4AF37]" aria-hidden="true" />
               </div>
               <div>
-                <h3 className="font-semibold text-slate-900 dark:text-white mb-1 font-poppins">
-                  We use cookies
-                </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
-                  We use cookies to enhance your experience and analyze site traffic. Read our{' '}
-                  <Link
-                    href="/privacy-policy"
-                    className="text-blue-600 hover:underline"
-                  >
+                <h3 className="font-serif font-semibold text-[#002147] mb-1">We use cookies</h3>
+                <p className="text-sm text-[#2D3748] mb-4 leading-relaxed font-sans">
+                  We use cookies to enhance your experience and analyse site traffic. Read our{' '}
+                  <Link href="/privacy-policy" className="text-[#002147] underline underline-offset-2">
                     Privacy Policy
-                  </Link>{' '}
-                  for more information.
+                  </Link>.
                 </p>
                 <div className="flex items-center gap-3">
                   <button
-                    onClick={handleAccept}
-                    className="flex-1 sm:flex-none px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors"
+                    onClick={accept}
+                    className="flex-1 sm:flex-none px-5 py-2.5 bg-[#002147] hover:bg-[#E07A5F] text-white text-sm font-semibold font-sans rounded-xl transition-colors"
                   >
                     Accept All
                   </button>
                   <button
-                    onClick={handleDecline}
-                    className="flex-1 sm:flex-none px-5 py-2 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 text-sm font-medium rounded-lg transition-colors"
+                    onClick={decline}
+                    className="flex-1 sm:flex-none px-5 py-2.5 border border-[#E2D9CC] text-[#2D3748] hover:bg-[#F5F1EB] text-sm font-medium font-sans rounded-xl transition-colors"
                   >
                     Decline
                   </button>

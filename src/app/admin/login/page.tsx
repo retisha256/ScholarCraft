@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AdminLoginClient from './AdminLoginClient'
 
 export const metadata: Metadata = {
-  title: 'Admin Login | AcademicPro',
+  title: 'Admin Login | ScholarCraft',
   robots: { index: false },
 }
 

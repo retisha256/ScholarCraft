@@ -1,16 +1,20 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { EASE } from '@/lib/motion'
 
 interface Props {
   badge?: string
   title: string
-  titleHighlight?: string   // part of title to render in gradient
+  titleHighlight?: string
   subtitle?: string
   centered?: boolean
+  light?: boolean
 }
 
-export default function SectionHeader({ badge, title, titleHighlight, subtitle, centered = true }: Props) {
+export default function SectionHeader({
+  badge, title, titleHighlight, subtitle, centered = true, light = false,
+}: Props) {
   const titleParts = titleHighlight ? title.split(titleHighlight) : null
 
   return (
@@ -18,28 +22,27 @@ export default function SectionHeader({ badge, title, titleHighlight, subtitle, 
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`flex flex-col gap-4 mb-16 lg:mb-20 ${centered ? 'items-center text-center' : 'items-start'}`}
+      transition={{ duration: 0.6, ease: EASE }}
+      className={`flex flex-col gap-4 mb-14 lg:mb-20 ${centered ? 'items-center text-center' : 'items-start'}`}
     >
       {badge && (
-        <span className="label-pill">{badge}</span>
+        <span className={`label-pill ${light ? 'bg-white/15 border-white/25 text-white' : ''}`}>
+          {badge}
+        </span>
       )}
 
-      <h2
-        className="font-[family-name:var(--font-poppins)] font-bold text-[#F8FAFC] text-[36px] lg:text-[48px]
-                   leading-[1.15] tracking-tight max-w-[800px]"
-      >
+      <h2 className={`section-heading ${light ? 'text-white' : 'text-[var(--text-primary)]'}`}>
         {titleParts ? (
           <>
             {titleParts[0]}
-            <span className="text-gradient">{titleHighlight}</span>
+            <span className={light ? 'text-[var(--accent)]' : 'text-gradient'}>{titleHighlight}</span>
             {titleParts[1]}
           </>
         ) : title}
       </h2>
 
       {subtitle && (
-        <p className={`text-[#CBD5E1] text-lg leading-relaxed ${centered ? 'max-w-[600px] mx-auto' : 'max-w-[600px]'}`}>
+        <p className={`section-copy ${centered ? 'mx-auto' : ''} ${light ? 'text-blue-100' : ''}`}>
           {subtitle}
         </p>
       )}

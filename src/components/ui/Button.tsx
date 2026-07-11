@@ -37,25 +37,20 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed'
+      'inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed'
 
     const variants = {
-      primary:
-        'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 shadow-md hover:shadow-lg',
-      secondary:
-        'bg-amber-500 text-white hover:bg-amber-600 focus:ring-amber-400 shadow-md hover:shadow-lg',
-      outline:
-        'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white focus:ring-blue-500',
-      ghost:
-        'text-navy-900 hover:bg-slate-100 dark:hover:bg-slate-800 focus:ring-slate-300',
-      danger:
-        'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 shadow-md hover:shadow-lg',
+      primary: 'btn-base btn-primary',
+      secondary: 'btn-base btn-secondary',
+      outline: 'btn-base btn-outline',
+      ghost: 'inline-flex items-center justify-center min-h-[52px] px-8 rounded-xl text-sm text-[var(--text-primary)] hover:bg-[#f1f1f1] focus:ring-[var(--border)]',
+      danger: 'btn-base bg-[var(--error)] text-white hover:bg-[#b91c1c] shadow-md hover:shadow-lg',
     }
 
     const sizes = {
-      sm: 'px-4 py-2 text-sm gap-1.5',
-      md: 'px-6 py-3 text-base gap-2',
-      lg: 'px-8 py-4 text-lg gap-2.5',
+      sm: 'px-6 py-2 text-sm gap-1.5',
+      md: 'px-8 py-3 text-base gap-2',
+      lg: 'px-8 py-3 text-lg gap-2.5',
     }
 
     const classes = cn(baseStyles, variants[variant], sizes[size], className)
