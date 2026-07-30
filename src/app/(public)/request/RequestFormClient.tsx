@@ -15,8 +15,8 @@ import { apiClient } from '@/utils/apiClient'
 
 const TRUST = [
   { icon: Shield, text: '100% Confidential' },
-  { icon: Award,  text: 'Expert Assigned Within 2h' },
-  { icon: Clock,  text: 'Deadline Guaranteed' },
+  { icon: Award, text: 'Expert Assigned Within 2h' },
+  { icon: Clock, text: 'Deadline Guaranteed' },
 ]
 
 export default function RequestFormClient() {
@@ -51,9 +51,9 @@ export default function RequestFormClient() {
       const { error } = await supabase.from('project_requests').insert({
         ...data,
         number_of_pages: data.number_of_pages || null,
-        institution:             data.institution || null,
-        citation_style:          data.citation_style || null,
-        budget:                  data.budget || null,
+        institution: data.institution || null,
+        citation_style: data.citation_style || null,
+        budget: data.budget || null,
         additional_instructions: data.additional_instructions || null,
         file_url: fileUrl ?? null,
         status: 'new',
@@ -83,16 +83,16 @@ export default function RequestFormClient() {
   }
 
   /* shared input styles */
-  const input = `w-full bg-[#0F172A] border border-white/[0.08] rounded-xl px-5 py-3.5
-    text-[#F8FAFC] placeholder-[#334155] text-sm
-    focus:outline-none focus:border-[#2563EB]/60 focus:ring-1 focus:ring-[#2563EB]/30
+  const input = `w-full bg-white border border-[#E8E5DF] rounded-xl px-5 py-3.5
+    text-[#002147] placeholder-[#A0AEC0] text-sm
+    focus:outline-none focus:border-[#002147] focus:ring-1 focus:ring-[#002147]
     transition-all duration-200`
   const selectCls = `${input} cursor-pointer appearance-none`
-  const labelCls = 'block text-xs font-medium text-[#CBD5E1] uppercase tracking-wider mb-2'
-  const errCls   = 'flex items-center gap-1.5 text-xs text-[#EF4444] mt-1.5'
+  const labelCls = 'block text-xs font-semibold text-[#002147] uppercase tracking-wider mb-2'
+  const errCls = 'flex items-center gap-1.5 text-xs text-[#E53E3E] mt-1.5'
 
   return (
-    <section className="min-h-screen bg-[#0F172A] pt-28 pb-24">
+    <section className="min-h-screen bg-[#FDFBF7] pt-28 pb-24">
       <div className="container-xl max-w-4xl">
         {/* Page heading */}
         <motion.div
@@ -100,20 +100,19 @@ export default function RequestFormClient() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <span className="label-pill mb-4 inline-flex">Free Consultation</span>
-          <h1 className="font-[family-name:var(--font-poppins)] font-bold text-[#F8FAFC] text-[38px] lg:text-[48px] leading-tight tracking-tight mb-4">
+          <h1 className="font-[family-name:var(--font-poppins)] font-bold text-[#002147] text-[38px] lg:text-[48px] leading-tight tracking-tight mb-4">
             Request a Quote
           </h1>
-          <p className="text-[#CBD5E1] text-base max-w-lg mx-auto">
+          <p className="text-[#4A5568] text-base max-w-lg mx-auto">
             Fill in the form below and we&apos;ll respond with a personalised quote within 2 hours.
           </p>
 
           {/* Trust badges */}
           <div className="flex flex-wrap items-center justify-center gap-6 mt-6">
             {TRUST.map(({ icon: Icon, text }) => (
-              <div key={text} className="flex items-center gap-2">
-                <Icon className="w-4 h-4 text-[#22C55E]" aria-hidden="true" />
-                <span className="text-sm text-[#CBD5E1]">{text}</span>
+              <div key={text} className="flex items-center gap-2 rounded-full border border-[#E8E5DF] bg-white px-4 py-2 text-sm font-medium text-[#2D3748] shadow-sm">
+                <Icon className="w-4 h-4 text-[#2F855A]" aria-hidden="true" />
+                <span>{text}</span>
               </div>
             ))}
           </div>
@@ -123,14 +122,14 @@ export default function RequestFormClient() {
             <motion.div
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-3 mt-5 glass rounded-xl px-5 py-3 text-sm text-[#CBD5E1] border-[#2563EB]/30"
+              className="inline-flex items-center gap-3 mt-5 bg-[#F8F6F2] border border-[#E8E5DF] rounded-xl px-5 py-3 text-sm text-[#2D3748] shadow-sm"
             >
-              <RotateCcw className="w-4 h-4 text-[#2563EB]" aria-hidden="true" />
+              <RotateCcw className="w-4 h-4 text-[#002147]" aria-hidden="true" />
               Your previous progress has been restored.
               <button
                 type="button"
                 onClick={() => { clearSaved(); reset() }}
-                className="text-[#F59E0B] hover:underline text-xs"
+                className="text-[#E07A5F] hover:underline text-xs font-medium"
               >
                 Clear
               </button>
@@ -145,32 +144,32 @@ export default function RequestFormClient() {
               key="success"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="glass rounded-3xl p-16 text-center border-white/[0.12]"
+              className="bg-white rounded-3xl p-12 lg:p-16 text-center border border-[#E8E5DF] shadow-md"
             >
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: 'spring', stiffness: 200, delay: 0.1 }}
-                className="w-20 h-20 rounded-full bg-[#22C55E]/15 border border-[#22C55E]/30 flex items-center justify-center mx-auto mb-6"
+                className="w-20 h-20 rounded-full bg-[#E6FFFA] border border-[#C6F6D5] flex items-center justify-center mx-auto mb-6"
               >
-                <CheckCircle className="w-10 h-10 text-[#22C55E]" aria-hidden="true" />
+                <CheckCircle className="w-10 h-10 text-[#2F855A]" aria-hidden="true" />
               </motion.div>
-              <h2 className="font-[family-name:var(--font-poppins)] font-bold text-[#F8FAFC] text-2xl mb-3">
+              <h2 className="font-[family-name:var(--font-poppins)] font-bold text-[#002147] text-2xl mb-3">
                 Request Submitted!
               </h2>
-              <p className="text-[#CBD5E1] text-sm max-w-md mx-auto mb-8">
+              <p className="text-[#4A5568] text-sm max-w-md mx-auto mb-8">
                 Our team will review your project details and contact you with a personalised quote within 2 hours.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   onClick={() => setState('idle')}
-                  className="px-7 py-3.5 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold text-sm transition-colors"
+                  className="px-7 py-3.5 rounded-xl bg-[#002147] hover:bg-[#E07A5F] text-white font-semibold text-sm transition-colors shadow-sm"
                 >
                   Submit Another
                 </button>
                 <a
                   href="/services"
-                  className="px-7 py-3.5 rounded-xl border border-white/[0.08] text-[#CBD5E1] hover:text-[#F8FAFC] font-medium text-sm transition-colors text-center"
+                  className="px-7 py-3.5 rounded-xl border border-[#E8E5DF] bg-white text-[#002147] hover:bg-[#F8F6F2] font-semibold text-sm transition-colors text-center"
                 >
                   Browse Services
                 </a>
@@ -181,13 +180,13 @@ export default function RequestFormClient() {
             <motion.div key="form" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               {state === 'error' && (
                 <div
-                  className="flex items-center gap-3 bg-[#EF4444]/10 border border-[#EF4444]/20 rounded-2xl p-4 mb-6"
+                  className="flex items-center gap-3 bg-[#FFF5F5] border border-[#FEB2B2] rounded-2xl p-4 mb-6"
                   role="alert"
                 >
-                  <AlertCircle className="w-4 h-4 text-[#EF4444] flex-shrink-0" aria-hidden="true" />
-                  <p className="text-sm text-[#FCA5A5]">
+                  <AlertCircle className="w-4 h-4 text-[#E53E3E] flex-shrink-0" aria-hidden="true" />
+                  <p className="text-sm text-[#C53030]">
                     Something went wrong. Please try again or{' '}
-                    <a href="/contact" className="underline">contact us directly</a>.
+                    <a href="/contact" className="underline font-semibold">contact us directly</a>.
                   </p>
                 </div>
               )}
@@ -195,18 +194,18 @@ export default function RequestFormClient() {
               <form
                 onSubmit={handleSubmit(onSubmit)}
                 noValidate
-                className="glass rounded-3xl p-8 lg:p-10 border-white/[0.08]"
+                className="bg-white rounded-3xl p-8 lg:p-10 border border-[#E8E5DF] shadow-md"
                 aria-label="Project request form"
               >
                 {/* ── Personal Information ─────────────── */}
                 <fieldset className="mb-8">
-                  <legend className="font-[family-name:var(--font-poppins)] font-semibold text-[#F8FAFC] text-base pb-4 border-b border-white/[0.06] w-full block mb-5">
+                  <legend className="font-[family-name:var(--font-poppins)] font-bold text-[#002147] text-base pb-4 border-b border-[#E8E5DF] w-full block mb-5">
                     Personal Information
                   </legend>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="fn" className={labelCls}>
-                        Full Name <span className="text-[#EF4444]" aria-hidden="true">*</span>
+                        Full Name <span className="text-[#E53E3E]" aria-hidden="true">*</span>
                       </label>
                       <input id="fn" type="text" placeholder="Dr. Jane Smith"
                         {...register('full_name')} className={input}
@@ -222,7 +221,7 @@ export default function RequestFormClient() {
 
                     <div>
                       <label htmlFor="em" className={labelCls}>
-                        Email <span className="text-[#EF4444]" aria-hidden="true">*</span>
+                        Email <span className="text-[#E53E3E]" aria-hidden="true">*</span>
                       </label>
                       <input id="em" type="email" placeholder="jane@example.com"
                         {...register('email')} className={input}
@@ -238,7 +237,7 @@ export default function RequestFormClient() {
 
                     <div>
                       <label htmlFor="ph" className={labelCls}>
-                        Phone <span className="text-[#EF4444]" aria-hidden="true">*</span>
+                        Phone <span className="text-[#E53E3E]" aria-hidden="true">*</span>
                       </label>
                       <input id="ph" type="tel" placeholder="+1 234 567 890"
                         {...register('phone')} className={input}
@@ -254,7 +253,7 @@ export default function RequestFormClient() {
 
                     <div>
                       <label htmlFor="co" className={labelCls}>
-                        Country <span className="text-[#EF4444]" aria-hidden="true">*</span>
+                        Country <span className="text-[#E53E3E]" aria-hidden="true">*</span>
                       </label>
                       <input id="co" type="text" placeholder="United Kingdom"
                         {...register('country')} className={input}
@@ -271,7 +270,7 @@ export default function RequestFormClient() {
                     <div className="sm:col-span-2">
                       <label htmlFor="ins" className={labelCls}>
                         Institution{' '}
-                        <span className="text-[#475569] normal-case tracking-normal text-xs">(optional)</span>
+                        <span className="text-[#718096] normal-case tracking-normal text-xs">(optional)</span>
                       </label>
                       <input id="ins" type="text" placeholder="University of Oxford"
                         {...register('institution')} className={input} />
@@ -281,20 +280,20 @@ export default function RequestFormClient() {
 
                 {/* ── Project Details ──────────────────── */}
                 <fieldset className="mb-8">
-                  <legend className="font-[family-name:var(--font-poppins)] font-semibold text-[#F8FAFC] text-base pb-4 border-b border-white/[0.06] w-full block mb-5">
+                  <legend className="font-[family-name:var(--font-poppins)] font-bold text-[#002147] text-base pb-4 border-b border-[#E8E5DF] w-full block mb-5">
                     Project Details
                   </legend>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="al" className={labelCls}>
-                        Academic Level <span className="text-[#EF4444]" aria-hidden="true">*</span>
+                        Academic Level <span className="text-[#E53E3E]" aria-hidden="true">*</span>
                       </label>
                       <select id="al" {...register('academic_level')} className={selectCls}
                         aria-describedby={errors.academic_level ? 'al-err' : undefined}
                         aria-invalid={!!errors.academic_level}>
                         <option value="">Select level</option>
                         {ACADEMIC_LEVELS.map((l) => (
-                          <option key={l.value} value={l.value} className="bg-[#1E293B]">{l.label}</option>
+                          <option key={l.value} value={l.value} className="bg-white text-[#002147]">{l.label}</option>
                         ))}
                       </select>
                       {errors.academic_level && (
@@ -307,14 +306,14 @@ export default function RequestFormClient() {
 
                     <div>
                       <label htmlFor="sr" className={labelCls}>
-                        Service Required <span className="text-[#EF4444]" aria-hidden="true">*</span>
+                        Service Required <span className="text-[#E53E3E]" aria-hidden="true">*</span>
                       </label>
                       <select id="sr" {...register('service_required')} className={selectCls}
                         aria-describedby={errors.service_required ? 'sr-err' : undefined}
                         aria-invalid={!!errors.service_required}>
                         <option value="">Select service</option>
                         {SERVICES.map((s) => (
-                          <option key={s.id} value={s.id} className="bg-[#1E293B]">{s.title}</option>
+                          <option key={s.id} value={s.id} className="bg-white text-[#002147]">{s.title}</option>
                         ))}
                       </select>
                       {errors.service_required && (
@@ -327,7 +326,7 @@ export default function RequestFormClient() {
 
                     <div className="sm:col-span-2">
                       <label htmlFor="pt" className={labelCls}>
-                        Project Topic / Title <span className="text-[#EF4444]" aria-hidden="true">*</span>
+                        Project Topic / Title <span className="text-[#E53E3E]" aria-hidden="true">*</span>
                       </label>
                       <input id="pt" type="text"
                         placeholder="The Impact of Social Media on Academic Performance"
@@ -344,7 +343,7 @@ export default function RequestFormClient() {
 
                     <div>
                       <label htmlFor="dl" className={labelCls}>
-                        Deadline <span className="text-[#EF4444]" aria-hidden="true">*</span>
+                        Deadline <span className="text-[#E53E3E]" aria-hidden="true">*</span>
                       </label>
                       <input id="dl" type="date"
                         {...register('deadline')}
@@ -363,7 +362,7 @@ export default function RequestFormClient() {
                     <div>
                       <label htmlFor="np" className={labelCls}>
                         Number of Pages{' '}
-                        <span className="text-[#475569] normal-case tracking-normal text-xs">(optional)</span>
+                        <span className="text-[#718096] normal-case tracking-normal text-xs">(optional)</span>
                       </label>
                       <input id="np" type="number" min={1} placeholder="e.g. 20"
                         {...register('number_of_pages', { valueAsNumber: true })}
@@ -373,12 +372,12 @@ export default function RequestFormClient() {
                     <div>
                       <label htmlFor="cs" className={labelCls}>
                         Citation Style{' '}
-                        <span className="text-[#475569] normal-case tracking-normal text-xs">(optional)</span>
+                        <span className="text-[#718096] normal-case tracking-normal text-xs">(optional)</span>
                       </label>
                       <select id="cs" {...register('citation_style')} className={selectCls}>
                         <option value="">Select style</option>
                         {CITATION_STYLES.map((s) => (
-                          <option key={s.value} value={s.value} className="bg-[#1E293B]">{s.label}</option>
+                          <option key={s.value} value={s.value} className="bg-white text-[#002147]">{s.label}</option>
                         ))}
                       </select>
                     </div>
@@ -386,7 +385,7 @@ export default function RequestFormClient() {
                     <div>
                       <label htmlFor="bu" className={labelCls}>
                         Budget{' '}
-                        <span className="text-[#475569] normal-case tracking-normal text-xs">(optional)</span>
+                        <span className="text-[#718096] normal-case tracking-normal text-xs">(optional)</span>
                       </label>
                       <input id="bu" type="text" placeholder="e.g. $100–$200"
                         {...register('budget')} className={input} />
@@ -396,7 +395,7 @@ export default function RequestFormClient() {
 
                 {/* ── File upload ──────────────────────── */}
                 <fieldset className="mb-8">
-                  <legend className="font-[family-name:var(--font-poppins)] font-semibold text-[#F8FAFC] text-base pb-4 border-b border-white/[0.06] w-full block mb-5">
+                  <legend className="font-[family-name:var(--font-poppins)] font-bold text-[#002147] text-base pb-4 border-b border-[#E8E5DF] w-full block mb-5">
                     Supporting Files
                   </legend>
                   <FileUploader
@@ -410,7 +409,7 @@ export default function RequestFormClient() {
                 <div className="mb-8">
                   <label htmlFor="ai" className={labelCls}>
                     Additional Instructions{' '}
-                    <span className="text-[#475569] normal-case tracking-normal text-xs">(optional)</span>
+                    <span className="text-[#718096] normal-case tracking-normal text-xs">(optional)</span>
                   </label>
                   <textarea
                     id="ai"
@@ -426,9 +425,8 @@ export default function RequestFormClient() {
                 <button
                   type="submit"
                   disabled={state === 'loading'}
-                  className="w-full py-4 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] disabled:opacity-60
-                             text-white font-semibold text-base
-                             shadow-[0_0_24px_rgba(37,99,235,0.4)] hover:shadow-[0_0_36px_rgba(37,99,235,0.6)]
+                  className="w-full py-4 rounded-xl bg-[#002147] hover:bg-[#E07A5F] disabled:opacity-60
+                             text-white font-semibold text-base shadow-sm hover:shadow-md
                              transition-all duration-300 active:scale-[0.98]"
                   aria-busy={state === 'loading'}
                 >
@@ -443,9 +441,9 @@ export default function RequestFormClient() {
                   ) : 'Submit Request'}
                 </button>
 
-                <p className="text-center text-xs text-[#475569] mt-4">
+                <p className="text-center text-xs text-[#718096] mt-4">
                   By submitting you agree to our{' '}
-                  <a href="/privacy-policy" className="text-[#2563EB] hover:underline">Privacy Policy</a>.
+                  <a href="/privacy-policy" className="text-[#002147] font-semibold hover:underline">Privacy Policy</a>.
                   All information is strictly confidential.
                 </p>
               </form>

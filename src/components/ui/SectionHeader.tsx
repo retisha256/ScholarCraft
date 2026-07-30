@@ -25,11 +25,7 @@ export default function SectionHeader({
       transition={{ duration: 0.6, ease: EASE }}
       className={`flex flex-col gap-4 mb-14 lg:mb-20 ${centered ? 'items-center text-center' : 'items-start'}`}
     >
-      {badge && (
-        <span className={`label-pill ${light ? 'bg-white/15 border-white/25 text-white' : ''}`}>
-          {badge}
-        </span>
-      )}
+
 
       <h2 className={`section-heading ${light ? 'text-white' : 'text-[var(--text-primary)]'}`}>
         {titleParts ? (

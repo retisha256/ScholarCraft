@@ -12,9 +12,9 @@ const ICON_MAP: Record<string, React.ElementType> = {
 }
 
 const GUARANTEES = [
-  { title: '2-Hour Response',      desc: 'We review your request and respond with a quote within 2 hours.' },
-  { title: 'Expert Matching',      desc: 'We match your project to the most qualified specialist in your field.' },
-  { title: 'Quality Checked',      desc: 'Every deliverable is quality-checked before being sent to you.' },
+  { title: '2-Hour Response', desc: 'We review your request and respond with a quote within 2 hours.' },
+  { title: 'Expert Matching', desc: 'We match your project to the most qualified specialist in your field.' },
+  { title: 'Quality Checked', desc: 'Every deliverable is quality-checked before being sent to you.' },
   { title: 'Satisfaction Guarantee', desc: 'Free revisions until you are 100% satisfied with the result.' },
 ]
 
@@ -27,7 +27,6 @@ export default function HowItWorksPageClient() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#E07A5F]/10 rounded-full blur-3xl" />
         </div>
         <div className="container-xl relative z-10 text-center max-w-2xl mx-auto">
-          <motion.span className="label-pill mb-5 inline-flex bg-[#F8F6F2] text-[#2D3748] border-[#E8E5DF]" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>Process</motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }}
             className="font-[family-name:var(--font-poppins)] font-bold text-[#002147] text-[42px] lg:text-[60px] leading-tight tracking-tight mb-5">
@@ -64,7 +63,7 @@ export default function HowItWorksPageClient() {
                       </span>
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold text-[#2563EB] tracking-widest uppercase mb-1">Step {String(i + 1).padStart(2,'0')}</p>
+                      <p className="text-[10px] font-bold text-[#2563EB] tracking-widest uppercase mb-1">Step {String(i + 1).padStart(2, '0')}</p>
                       <h3 className="font-[family-name:var(--font-poppins)] font-semibold text-[#002147] text-lg mb-1.5">{step.title}</h3>
                       <p className="text-[#2D3748] text-sm leading-relaxed">{step.description}</p>
                     </div>

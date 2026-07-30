@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="pt-16 bg-[#0F172A]">
+    <div className="pt-16 bg-[#fdfbf7]">
       <ContactSection />
     </div>
   )

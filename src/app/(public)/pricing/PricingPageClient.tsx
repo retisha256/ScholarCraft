@@ -24,7 +24,6 @@ export default function PricingPageClient() {
           <div className="absolute top-0 right-1/3 w-[500px] h-[400px] bg-[#D4AF37]/6 rounded-full blur-3xl" />
         </div>
         <div className="container-xl relative z-10 text-center">
-          <motion.span className="label-pill mb-5 inline-flex" {...fade()}>Pricing</motion.span>
           <motion.h1
             {...fade(0.08)}
             className="font-serif font-bold text-[#002147] text-[42px] lg:text-[60px] leading-tight tracking-tight mb-5"
@@ -47,11 +46,10 @@ export default function PricingPageClient() {
               <motion.div
                 key={plan.name}
                 {...fade(i * 0.12)}
-                className={`relative rounded-2xl p-10 flex flex-col transition-all duration-300 ${
-                  plan.highlighted
+                className={`relative rounded-2xl p-10 flex flex-col transition-all duration-300 ${plan.highlighted
                     ? 'bg-[#002147] text-white shadow-[0_20px_60px_rgba(0,33,71,0.25)] scale-[1.03]'
                     : 'bg-white border border-[#E2D9CC] shadow-md hover:shadow-xl hover:-translate-y-1'
-                }`}
+                  }`}
               >
                 {plan.highlighted && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
@@ -93,11 +91,10 @@ export default function PricingPageClient() {
 
                 <Link
                   href="/request"
-                  className={`block w-full text-center py-4 rounded-xl font-semibold font-sans text-sm transition-all duration-200 ${
-                    plan.highlighted
+                  className={`block w-full text-center py-4 rounded-xl font-semibold font-sans text-sm transition-all duration-200 ${plan.highlighted
                       ? 'bg-[#E07A5F] hover:bg-[#D4AF37] text-white shadow-lg hover:shadow-xl'
                       : 'bg-[#002147] hover:bg-[#E07A5F] text-white shadow-md hover:shadow-lg'
-                  }`}
+                    }`}
                 >
                   Get Started
                 </Link>

@@ -24,9 +24,7 @@ export default function PageHeader({
 }: PageHeaderProps) {
   return (
     <div className={cn('mx-auto max-w-4xl', centered ? 'text-center' : 'text-left', className)}>
-      {eyebrow ? (
-        <p className="label-pill mb-6 inline-flex">{eyebrow}</p>
-      ) : null}
+
 
       <h1 className="section-heading mb-6">{title}</h1>
 

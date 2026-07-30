@@ -23,7 +23,6 @@ export default function HeroSection() {
       <div className="container-xl relative z-10 py-16 lg:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: EASE }} className="max-w-2xl">
-            <span className="label-pill mb-6">Trusted by students across Africa and beyond</span>
             <h1 className="text-[2.35rem] font-semibold leading-[1.08] tracking-tight text-[#002147] sm:text-[3rem] lg:text-[3.8rem]">
               Professional academic support for research, writing, editing, and dissertation success.
             </h1>

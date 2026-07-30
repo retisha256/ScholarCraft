@@ -7,17 +7,17 @@ import Link from 'next/link'
 import { EASE } from '@/lib/motion'
 
 const TEAM = [
-  { name: 'Dr. Elizabeth Carter',  role: 'Founder & Academic Director', spec: 'Educational Psychology · Oxford',  init: 'EC', color: '#002147' },
-  { name: 'Prof. Michael Adebayo', role: 'Head of Research',             spec: 'Social Sciences · Harvard',       init: 'MA', color: '#E07A5F' },
-  { name: 'Dr. Priya Sharma',      role: 'Lead Statistical Analyst',     spec: 'Biostatistics · Johns Hopkins',   init: 'PS', color: '#16A34A' },
-  { name: 'James Whitfield',       role: 'Senior Academic Writer',       spec: 'English Literature · Edinburgh',  init: 'JW', color: '#D4AF37' },
+  { name: 'Dr. Elizabeth Carter', role: 'Founder & Academic Director', spec: 'Educational Psychology · Oxford', init: 'EC', color: '#002147' },
+  { name: 'Prof. Michael Adebayo', role: 'Head of Research', spec: 'Social Sciences · Harvard', init: 'MA', color: '#E07A5F' },
+  { name: 'Dr. Priya Sharma', role: 'Lead Statistical Analyst', spec: 'Biostatistics · Johns Hopkins', init: 'PS', color: '#16A34A' },
+  { name: 'James Whitfield', role: 'Senior Academic Writer', spec: 'English Literature · Edinburgh', init: 'JW', color: '#D4AF37' },
 ]
 
 const VALUES = [
-  { icon: Target, title: 'Purpose-Driven',  desc: 'Every service designed to maximise your academic success.',    color: '#002147' },
-  { icon: Heart,  title: 'Student-First',   desc: 'Your wellbeing and learning journey are always our priority.', color: '#E07A5F' },
-  { icon: Award,  title: 'Excellence',      desc: 'We maintain the highest standards for every project we handle.', color: '#D4AF37' },
-  { icon: Globe,  title: 'Inclusive',       desc: 'Serving students from every discipline and background.',        color: '#16A34A' },
+  { icon: Target, title: 'Purpose-Driven', desc: 'Every service designed to maximise your academic success.', color: '#002147' },
+  { icon: Heart, title: 'Student-First', desc: 'Your wellbeing and learning journey are always our priority.', color: '#E07A5F' },
+  { icon: Award, title: 'Excellence', desc: 'We maintain the highest standards for every project we handle.', color: '#D4AF37' },
+  { icon: Globe, title: 'Inclusive', desc: 'Serving students from every discipline and background.', color: '#16A34A' },
 ]
 
 const MILESTONES = [
@@ -44,7 +44,6 @@ export default function AboutPageClient() {
           <div className="absolute -top-32 left-1/3 w-[500px] h-[400px] bg-[#002147]/5 rounded-full blur-3xl" />
         </div>
         <div className="container-xl relative z-10 text-center max-w-3xl mx-auto">
-          <motion.span className="label-pill mb-5 inline-flex" {...fade()}>About Us</motion.span>
           <motion.h1
             {...fade(0.08)}
             className="font-serif font-bold text-[#002147] text-[42px] lg:text-[60px] leading-tight tracking-tight mb-5"
@@ -62,7 +61,6 @@ export default function AboutPageClient() {
       <section className="section-py bg-[#F5F1EB]">
         <div className="container-xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div {...fade()}>
-            <span className="label-pill mb-5 inline-flex">Our Mission</span>
             <h2 className="font-serif font-bold text-[#002147] text-[32px] lg:text-[40px] leading-tight tracking-tight mb-5">
               Empowering Academic Excellence Worldwide
             </h2>

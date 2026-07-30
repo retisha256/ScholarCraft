@@ -46,7 +46,6 @@ export default function NewsletterForm() {
       <div className="rounded-[2rem] border border-[var(--border)] bg-white p-8 shadow-soft">
         <div className="flex items-center gap-3 mb-4">
           <Mail className="w-5 h-5 text-[var(--accent)]" aria-hidden="true" />
-          <span className="label-pill">Newsletter</span>
         </div>
 
         <h2 className="font-serif text-3xl font-semibold tracking-[-0.03em] text-[var(--text-primary)] mb-3">

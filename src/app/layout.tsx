@@ -58,7 +58,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${lora.variable}`}>
+      <body className={`${inter.variable} ${lora.variable}`} suppressHydrationWarning>
         <ThemeProvider>
           <SkipLink />
           {children}
@@ -79,7 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 maxWidth: '380px',
               },
               success: { iconTheme: { primary: '#16A34A', secondary: '#FFFFFF' } },
-              error:   { iconTheme: { primary: '#DC2626', secondary: '#FFFFFF' } },
+              error: { iconTheme: { primary: '#DC2626', secondary: '#FFFFFF' } },
             }}
           />
         </ThemeProvider>

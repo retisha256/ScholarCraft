@@ -24,9 +24,6 @@ export default function ServicesPageClient() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#E07A5F]/10 rounded-full blur-3xl" />
         </div>
         <div className="container-xl relative z-10 text-center">
-          <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="label-pill mb-5 inline-flex bg-[#F8F6F2] text-[#2D3748] border-[#E8E5DF]">
-            Our Services
-          </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
             className="font-[family-name:var(--font-poppins)] font-bold text-[#002147] text-[42px] lg:text-[60px] leading-tight tracking-tight mb-5"

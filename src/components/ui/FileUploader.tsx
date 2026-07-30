@@ -73,9 +73,9 @@ export default function FileUploader({
   return (
     <div>
       {label && (
-        <p className="text-xs font-medium text-[#CBD5E1] uppercase tracking-wider mb-2">
+        <p className="text-xs font-semibold text-[#002147] uppercase tracking-wider mb-2">
           {label}{' '}
-          <span className="text-[#475569] normal-case tracking-normal">(optional)</span>
+          <span className="text-[#718096] normal-case tracking-normal">(optional)</span>
         </p>
       )}
 
@@ -88,7 +88,7 @@ export default function FileUploader({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.96 }}
             transition={{ duration: 0.2 }}
-            className="glass rounded-2xl p-4 flex items-center gap-4"
+            className="bg-[#F8F6F2] border border-[#E8E5DF] rounded-2xl p-4 flex items-center gap-4 shadow-sm"
           >
             {/* Thumbnail or file icon */}
             {previewUrl ? (
@@ -96,31 +96,31 @@ export default function FileUploader({
               <img
                 src={previewUrl}
                 alt="Preview"
-                className="w-14 h-14 rounded-xl object-cover flex-shrink-0"
+                className="w-14 h-14 rounded-xl object-cover flex-shrink-0 border border-[#E8E5DF]"
                 onLoad={() => URL.revokeObjectURL(previewUrl)}
               />
             ) : (
-              <div className="w-14 h-14 rounded-xl bg-[#2563EB]/15 border border-[#2563EB]/20 flex items-center justify-center flex-shrink-0">
+              <div className="w-14 h-14 rounded-xl bg-white border border-[#E8E5DF] flex items-center justify-center flex-shrink-0">
                 {value.type === 'application/pdf' ? (
-                  <FileText className="w-6 h-6 text-[#2563EB]" aria-hidden="true" />
+                  <FileText className="w-6 h-6 text-[#002147]" aria-hidden="true" />
                 ) : (
-                  <ImageIcon className="w-6 h-6 text-[#2563EB]" aria-hidden="true" />
+                  <ImageIcon className="w-6 h-6 text-[#002147]" aria-hidden="true" />
                 )}
               </div>
             )}
 
             <div className="flex-1 min-w-0">
-              <p className="text-[#F8FAFC] text-sm font-medium truncate">{value.name}</p>
+              <p className="text-[#002147] text-sm font-medium truncate">{value.name}</p>
               <div className="flex items-center gap-2 mt-0.5">
-                <CheckCircle className="w-3 h-3 text-[#22C55E]" aria-hidden="true" />
-                <p className="text-xs text-[#22C55E]">{formatFileSize(value.size)}</p>
+                <CheckCircle className="w-3 h-3 text-[#2F855A]" aria-hidden="true" />
+                <p className="text-xs text-[#2F855A] font-medium">{formatFileSize(value.size)}</p>
               </div>
             </div>
 
             <button
               type="button"
               onClick={() => handleFile(null)}
-              className="w-9 h-9 rounded-xl bg-[#EF4444]/10 hover:bg-[#EF4444]/20 flex items-center justify-center text-[#EF4444] transition-colors flex-shrink-0"
+              className="w-9 h-9 rounded-xl bg-[#FFF5F5] hover:bg-[#FED7D7] flex items-center justify-center text-[#E53E3E] transition-colors flex-shrink-0 border border-[#FEB2B2]/30"
               aria-label="Remove file"
             >
               <X className="w-4 h-4" aria-hidden="true" />
@@ -144,11 +144,11 @@ export default function FileUploader({
             className={`relative border-2 border-dashed rounded-2xl p-8 text-center cursor-pointer
                         transition-all duration-200
                         ${dragging
-                          ? 'border-[#2563EB]/70 bg-[#2563EB]/5'
-                          : displayError
-                          ? 'border-[#EF4444]/40 bg-[#EF4444]/5'
-                          : 'border-white/[0.08] hover:border-white/[0.20] hover:bg-white/[0.02]'
-                        }`}
+                ? 'border-[#002147] bg-[#002147]/5'
+                : displayError
+                  ? 'border-[#E53E3E]/40 bg-[#FFF5F5]'
+                  : 'border-[#E8E5DF] hover:border-[#002147] bg-white hover:bg-[#F8F6F2]'
+              }`}
           >
             <input
               ref={inputRef}
@@ -164,20 +164,19 @@ export default function FileUploader({
               transition={{ duration: 0.2 }}
               className="flex flex-col items-center gap-3"
             >
-              <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors ${
-                dragging ? 'bg-[#2563EB]/20' : 'bg-white/[0.04]'
-              }`}>
+              <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors border border-[#E8E5DF] ${dragging ? 'bg-[#002147]/10' : 'bg-[#F8F6F2]'
+                }`}>
                 <Upload
-                  className={`w-6 h-6 transition-colors ${dragging ? 'text-[#2563EB]' : 'text-[#475569]'}`}
+                  className={`w-6 h-6 transition-colors ${dragging ? 'text-[#002147]' : 'text-[#718096]'}`}
                   aria-hidden="true"
                 />
               </div>
               <div>
-                <p className="text-sm text-[#CBD5E1]">
-                  <span className="text-[#2563EB] font-medium">Click to upload</span>{' '}
+                <p className="text-sm text-[#4A5568]">
+                  <span className="text-[#002147] font-semibold">Click to upload</span>{' '}
                   or drag and drop
                 </p>
-                <p className="text-xs text-[#475569] mt-1">
+                <p className="text-xs text-[#718096] mt-1">
                   PDF, DOC, DOCX, TXT, XLSX, PPTX, PNG, JPG — max {formatFileSize(MAX_SIZE)}
                 </p>
               </div>
@@ -193,7 +192,7 @@ export default function FileUploader({
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
-            className="flex items-center gap-1.5 text-xs text-[#EF4444] mt-1.5"
+            className="flex items-center gap-1.5 text-xs text-[#E53E3E] mt-1.5"
             role="alert"
           >
             <AlertCircle className="w-3 h-3 flex-shrink-0" aria-hidden="true" />
